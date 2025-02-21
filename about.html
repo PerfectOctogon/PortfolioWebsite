@@ -1,0 +1,46 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <div class="typing-container">Hello, I am Adithya</div>
+        <div class="description">I'm a software developer with a passion for building innovative and efficient solutions. My projects range from AI-powered tools like ClearCal to low-level programming challenges like an LMC Assembly Parser and a JSON compiler. I also enjoy game development and have worked on Dreamslip, a horror sci-fi experience. When I'm not coding, you’ll find me biking, going to the gym, or baking something new.</div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Adithya</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const typingContainer = document.querySelector(".typing-container");
+        const description = document.querySelector(".description");
+
+        setTimeout(() => {
+            typingContainer.classList.add("finished");
+            typingContainer.style.opacity = "1"; // Ensure it stays visible
+            setTimeout(() => {
+                description.style.opacity = "1";
+            }, 1000); // Delay the fade-in effect for the description
+        }, 2000); // Matches the typing animation duration
+    });
+    </script>
+</body>
+</html>

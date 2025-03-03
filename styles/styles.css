@@ -4,7 +4,6 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    overflow: hidden;
 }
 
 header {
@@ -51,8 +50,7 @@ footer {
     padding: 20px;
 }
 
-/* About Page Animation */
-#about {
+#main-page {
     background-color: black;
     color: white;
     height: 100vh;
@@ -63,6 +61,7 @@ footer {
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
+    position: relative;
 }
 
 @keyframes typing {
@@ -107,3 +106,70 @@ footer {
     width: fit-content;
 }
 
+.scroll-arrow {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    animation: bounce 1.5s infinite ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -10px); }
+}
+
+#mystery-log {
+    font-family: "Courier New", monospace;
+    color: #00ff00;
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.terminal-log {
+    font-size: 1.2rem;
+    margin: 5px;
+}
+
+#hidden-message {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0); /* Invisible at first */
+    text-align: center;
+    margin-top: 200px;
+    transition: color 3s ease-in-out;
+}
+
+#hidden-message.visible {
+    color: rgba(255, 255, 255, 1);
+}
+
+@keyframes glitch {
+    0% { transform: skew(0deg); }
+    20% { transform: skew(5deg); }
+    40% { transform: skew(-5deg); }
+    60% { transform: skew(3deg); }
+    80% { transform: skew(-3deg); }
+    100% { transform: skew(0deg); }
+}
+
+body.glitched {
+    animation: glitch 0.2s linear 2;
+}
+
+.redacted {
+    background: black;
+    color: black;
+    transition: color 0.5s ease-in-out;
+}
+
+.redacted:hover {
+    color: white;
+}

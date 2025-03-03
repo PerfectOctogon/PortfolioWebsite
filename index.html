@@ -6,6 +6,7 @@
     <title>Adithya's Portfolio</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -18,13 +19,73 @@
         </nav>
     </header>
     
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm Adithya, a developer passionate about coding and creating exciting projects.</p>
+    <section id="main-page">
+        <div class="typing-container">Hello, I am Adithya</div>
+        <div class="description">I'm a software developer with a passion for building innovative and efficient solutions. My projects range from AI-powered tools like ClearCal to low-level programming challenges like an LMC Assembly Parser and a JSON compiler. I also enjoy cybersecurity and game development and have worked on Dreamslip, a horror sci-fi experience. When I'm not coding, you’ll find me biking, going to the gym, or baking something new.</div>
+    </section>
+    <div class="scroll-arrow">&#x2193;</div>
+    <section id="mystery-log">
+        <pre class="terminal-log">[LOG] System Initialization... ███▒▒▒▒▒▒▒▒ 30%</pre>
+        <pre class="terminal-log">[LOG] Establishing Connection... ██████▒▒▒▒ 70%</pre>
+        <pre class="terminal-log">[LOG] User Detected. Tracking Enabled.</pre>
+        <pre class="terminal-log">[WARNING] Unauthorized access detected...</pre>
+    </section>
+    <section id="hidden-message">
+        <p>You weren’t supposed to find this...</p>
+    </section>
+    <section id="redacted-section">
+        <p><span class="redacted">████████████████</span> was just the beginning.</p>
+        <p>They told you <span class="redacted">█████████</span> but the truth is out there.</p>
     </section>
     
     <footer>
         <p>&copy; 2025 Adithya</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const typingContainer = document.querySelector(".typing-container");
+        const description = document.querySelector(".description");
+        const scrollArrow = document.querySelector(".scroll-arrow");
+
+        setTimeout(() => {
+            typingContainer.classList.add("finished");
+            typingContainer.style.opacity = "1";
+            setTimeout(() => {
+                description.style.opacity = "1";
+            }, 1000);
+        }, 2000);
+
+        // Scroll to the next section when arrow is clicked
+        scrollArrow.addEventListener("click", () => {
+            window.scrollTo({
+                top: window.innerHeight, 
+                behavior: "smooth"
+            });
+        });
+        document.addEventListener("scroll", () => {
+        const logSection = document.getElementById("mystery-log");
+        if (window.scrollY > 200) {
+            logSection.style.opacity = "1";
+        }
+        });
+        document.addEventListener("scroll", () => {
+        const message = document.getElementById("hidden-message");
+        if (window.scrollY > 400) {
+            message.classList.add("visible");
+        }
+        });
+        let lastScroll = 0;
+        document.addEventListener("scroll", () => {
+            const currentScroll = window.scrollY;
+            if (Math.abs(currentScroll - lastScroll) > 200) {
+                document.body.classList.add("glitched");
+                setTimeout(() => document.body.classList.remove("glitched"), 500);
+            }
+            lastScroll = currentScroll;
+        });
+    });
+
+    </script>
 </body>
 </html>
